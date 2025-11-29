@@ -1,9 +1,24 @@
-Steps to setup the project :
-	1.	Setup the virtual environment 
-	2.	Install requirements using - (pip install -r requirements.txt) 
-	3.  Set the db structure - Run the db_setup.py
-	4.	Get the data from the source - run the get_data.py
-	5.	run the command in the termial - (streamlit run app.py --server.port 8502)
-	6. login using the username and password to access the anaslysis and NEO Tracking System
+**Project: "NASA NEO Tracking System"**
+
+setup_steps:
+  -  "Create Virtual Environment"
+
+  -  "Install Requirements"
+     (command: "pip install -r requirements.txt")
+
+  -  "Set Database Structure"
+    command: "python db_setup.py"
+    description: "Creates the SQLite DB file (NEO.db) and required tables."
+
+  -  "Fetch NEO Data from NASA API"
+    commands:
+      - "Ensure .env contains: API=your_nasa_api_key"
+      - "python get_data.py"
+
+  -  "Run Streamlit App"
+    command: "streamlit run app.py --server.port 8502"
+
+  - : "Login to Application"
+    description: "Login to access Analysis, Queries, and the NEO Tracking Dashboard."
 
 
