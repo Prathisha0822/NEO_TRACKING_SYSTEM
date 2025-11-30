@@ -18,9 +18,9 @@ setup_steps:
       - "python get_data.py"
 
   -  "Run Streamlit App"
-    command: "streamlit run app.py --server.port 8502"
+    command: "streamlit run app.py"
 
-  - : "Login to Application"
+  - "Login to Application"
     description: "Login to access Analysis, Queries, and the NEO Tracking Dashboard."
 
 
