@@ -6,6 +6,8 @@ setup_steps:
   -  "Install Requirements"
      (command: "pip install -r requirements.txt")
 
+  -  "Get API Key" - (Create a .env file enter the API key)
+
   -  "Set Database Structure"
     command: "python db_setup.py"
     description: "Creates the SQLite DB file (NEO.db) and required tables."
