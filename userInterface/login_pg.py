@@ -1,19 +1,17 @@
 import streamlit as st
 
-# 🔐 Hard-coded login users
 USERS = {
-    "admin": "password",
-    "kalki": "kalki",
+    "admin": "admin@123"
 }
 
 
 def authenticate_user(username: str, password: str) -> bool:
-    """Validate user using the USERS dictionary."""
+   
     return username in USERS and USERS[username] == password
 
 
 def init_session():
-    """Initialize session state variables for login."""
+    
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
         st.session_state.username = ""
@@ -22,7 +20,6 @@ def init_session():
 
 
 def login_page():
-    """Render the login UI."""
     init_session()
 
     st.markdown(
@@ -69,7 +66,7 @@ def login_page():
             st.session_state.username = username.strip()
             st.session_state.remember = remember
             st.success("Login successful")
-            st.rerun()  # correct replacement for experimental_rerun
+            st.rerun()  
         else:
             st.error("Invalid username or password")
 

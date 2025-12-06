@@ -161,7 +161,7 @@ def asteroid_app_page():
     """Render the main NASA Asteroid Tracker UI."""
 
     # Sidebar
-    st.sidebar.markdown("## 🪐 Asteroid\nApproaches")
+    st.sidebar.markdown("## 🪐 Asteroid")
 
     mode = st.sidebar.radio(
         "View",
@@ -333,7 +333,7 @@ def asteroid_app_page():
                 "Start Date",
                 value=date_min or date(2024, 1, 1),
                 min_value=date_min or date(2000, 1, 1),
-                max_value=date_max or date.today(),   # 👈 fixed syntax + type
+                max_value=date_max or date.today(),  
             )
 
             end_date = st.date_input(
@@ -355,6 +355,7 @@ def asteroid_app_page():
         c1, c2, c3 = st.columns([1, 1, 1])
         with c2:
             filter_clicked = st.button("Execute Query 🌐", use_container_width=True)
+            # reset_operration = st.button("Reset Filters ", use_container_width=True)
 
         st.markdown("### Filtered Asteroids")
 
@@ -375,6 +376,8 @@ def asteroid_app_page():
                 st.info("No asteroids matched your filter criteria.")
             else:
                 st.dataframe(df, use_container_width=True, hide_index=True)
+        # elif reset_operration:
+        #     print("Resetting filters...")
 
     # ========== QUERIES VIEW ==========
     elif mode == "Queries":
@@ -401,8 +404,8 @@ def asteroid_app_page():
 
                 st.markdown(f"### {query['title']}")
                 st.markdown(f"**Question:** {query['question']}")
-                st.markdown("**SQL:**")
-                st.code(query["sql"], language="sql")
+                # st.markdown("**SQL:**")
+                # st.code(query["sql"], language="sql")
 
                 run_btn = st.button("Run Query", key=f"run_{query['id']}")
 
@@ -491,8 +494,8 @@ def asteroid_app_page():
 
                 st.markdown(f"### {query['title']}")
                 st.markdown(f"**Question:** {query['question']}")
-                st.markdown("**SQL:**")
-                st.code(query["sql"], language="sql")
+                # st.markdown("**SQL:**")
+                # st.code(query["sql"], language="sql")
 
                 run_btn = st.button("Run Query", key=f"run_{query['id']}")
 
